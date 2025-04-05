@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Video-MME </title>
+  <title> MVISU-Bench </title>
 
-  <link rel="icon" href="./static/images/video-mme.png">
+  <link rel="icon" href="./static/images/mvisu-bench.png">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -59,20 +59,7 @@
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
-            <b>MME</b> 
-          </a>
-          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
-            <b>Awesome-MLLM</b> 
-          </a>
-        </div>
-      </div>
+
     </div>
 
   </div>
@@ -85,33 +72,33 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title is-bold">
-            <img src="static/images/video-mme.png" style="width:1.6em;vertical-align: middle" alt="Logo"/>
-            <span class="video-mme" style="vertical-align: middle">Video-MME</span>
-            </h1>
-          <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
-            The First-Ever Comprehensive Evaluation Benchmark of <br> Multi-modal LLMs in Video Analysis
+            <img src="static/images/mvisu-bench.png" style="width:1.6em;vertical-align: middle" alt="Logo"/>
+            <span class="video-mme" style="vertical-align: middle">
+              <span style="color:#7ac7e2;">M</span>
+              <span style="color:#f7df87;">V</span>
+              <span style="color:#b88cce;">I</span>
+              <span style="color:#54beaa;">S</span>
+              <span style="color:#e3716e;">U</span>
+              -Bench
+            </span>
+          </h1>
+          
+          <h2 class="subtitle is-3 publication-subtitle" style="margin-bottom: 20px;">
+            Benchmarking Mobile Agents for Real-World Tasks by <br>
+            <span style="color:#7ac7e2;">Multi-App</span>,
+            <span style="color:#f7df87;">Vague</span>,
+            <span style="color:#b88cce;">Interactive</span>,
+            <span style="color:#54beaa;">Single-App</span> and
+            <span style="color:#e3716e;">Unethical</span> Instructions
           </h2>
           
-          <div class="is-size-5 publication-authors", style="width: 80%; margin: 20px auto;", >
-            <span class="author-block", style="font-size:24px"><a href="https://github.com/BradyFU/Video-MME">Video-MME Team</a></span>
-
-        </div>
-
-          <div class="is-size-5 publication-authors">
-            <!-- <span class="author-block"><sup style="color:#6fbf73;">1</sup>USTC,</span>
-            <span class="author-block"><sup style="color:#ed4b82">2</sup>XMU,</span>
-            <span class="author-block"><sup style="color:#9400D3">3</sup>HKU,</span>
-            <span class="author-block"><sup style="color:#ffac33">4</sup>PKU,</span>
-            <span class="author-block"><sup style="color:#18acfb">5</sup>CUHK,</span>
-            <span class="author-block"><sup style="color:#33ffd6">6</sup>ECNU</span><br> -->
-            <!-- <span class="paper-block"><b style="color:#f41c1c">ICLR 2024 Oral</b> (85 in 7304, 1.2%)</span> -->
-          </div>
+          
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2405.21075"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                 <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
                    class="external-link button is-normal is-rounded is-dark"> -->
@@ -123,7 +110,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/BradyFU/Video-MME"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -160,18 +147,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
-          In the quest for artificial general intelligence, Multi-modal Large Language Models (MLLMs) have emerged as a focal point in recent advancements. However, the predominant focus remains on developing their capabilities in static image understanding. The potential of MLLMs in processing sequential visual data is still insufficiently explored, highlighting the absence of a comprehensive, high-quality assessment of their performance. In this paper, we introduce <strong>Video-MME</strong>, the first-ever full-spectrum, <strong>M</strong>ulti-<strong>M</strong>odal <strong>E</strong>valuation benchmark of MLLMs in <strong>Video analysis</strong>. Our work distinguishes from existing benchmarks through four key features: 
-            <strong>1) Diversity in video types</strong>, spanning 6 primary visual domains with 30 subfields to ensure broad scenario generalizability;
-            <strong>2) Duration in temporal dimension</strong>, encompassing both short-, medium-, and long-term videos, ranging from 11 seconds to 1 hour, for robust contextual dynamics;
-            <strong>3) Breadth in data modalities</strong>, integrating multi-modal inputs besides video frames, including subtitles and audios, to unveil the all-round capabilities of MLLMs;
-            <strong>4) Quality in annotations</strong>, utilizing rigorous manual labeling by expert annotators to facilitate precise and reliable model assessment. 
-            900 videos with a total of 254 hours are manually selected and annotated by repeatedly viewing all the video content, resulting in 2,700 question-answer pairs.
-            With Video-MME, we extensively evaluate various state-of-the-art MLLMs, including GPT-4 series and Gemini 1.5 Pro, as well as open-source image models like InternVL-Chat-V1.5 and video models like LLaVA-NeXT-Video.
-            Our experiments reveal that Gemini 1.5 Pro is the best-performing commercial model, significantly outperforming the open-source models with an average accuracy of 75%, compared to 71.9% for GPT-4o. 
-            The results also demonstrate that <strong>Video-MME is a universal benchmark, which applies to both image and video MLLMs</strong>. 
-            Further analysis indicates that <strong>subtitle and audio information could significantly enhance video understanding</strong>. 
-            Besides, <strong>a decline in MLLM performance is observed as video duration increases for all models</strong>. 
-            Our dataset along with these findings underscores the need for further improvements in handling longer sequences and multi-modal data, shedding light on future MLLM development.
+
         </div>
       </div>
     </div>
@@ -201,9 +177,9 @@
 
         <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
         <div class="content">
-          <p class="mt-3">Accuracy scores on Video-MME are presented for short, medium, and long videos, taking the corresponding subtitles as input or not.
-          </p>
-          <div class="video-duration">
+          <!-- <p class="mt-3">Accuracy scores on Video-MME are presented for short, medium, and long videos, taking the corresponding subtitles as input or not.
+          </p> -->
+          <!-- <div class="video-duration">
             <p>
               <strong>Short Video:</strong> &lt; 2min  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <strong>Medium Video:</strong> 4min ~ 15min  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -212,9 +188,9 @@
             <p>
               By default, this leaderboard is sorted by results with subtitles. To view other sorted results, please click on the corresponding cell.
             </p>
-          </div>
+          </div> -->
 
-          <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
+          <!-- <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
             <thead>
               <tr>
                 <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="none"><strong>#</strong></th>
@@ -1056,9 +1032,9 @@
               
           
           </tbody>                                                   
-        </table> 
+        </table>  -->
 
-        <p style="margin-top: -20px;">
+        <!-- <p style="margin-top: -20px;">
           <strong style="color: #22a56e; font-size: 18px;" >Green date</strong> indicates the newly added/updated models  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
           - indicates closed-source models
         </p>
@@ -1068,7 +1044,7 @@
           </br>2* The videos less than 384 seconds are sampled at 1 fps, and for those longer than 384 seconds, we extract 384 frames uniformly. All the frames are resized to 512x512 resolution to fit within GPT-4o’s max context length.
           </br>3* The videos are sampled at 2 fps, and the upper limit is 768 frames.
           </br>4* The videos are sampled at 1 fps, and the upper limit is 600 frames.
-        </p>
+        </p> -->
 
         </div>
 
@@ -1093,16 +1069,16 @@
         <div class="column is-four-fifths" style="width: 100%;">
         <h2 class="title is-3">Data Examples</h2>
         <div class="content has-text-justified">
-          <p style="text-align: center;", class="mt-3"><strong>All data are newly collected and annotated by humans, not from any existing video dataset.</strong>
-          </p>
+          <!-- <p style="text-align: center;", class="mt-3"><strong>All data are newly collected and annotated by humans, not from any existing video dataset.</strong>
+          </p> -->
 
-        <div id="results-carousel" class="carousel results-carousel">  
+        <!-- <div id="results-carousel" class="carousel results-carousel">  
           
             <div class="content has-text-centered">
 
               <img src="static/images/highlight_video/VFntoBRGF1A.png" style="width: 95%;"/>
               <p style="margin-bottom: 30px;">🔗 Full Video Link:&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=VFntoBRGF1A">https://www.youtube.com/watch?v=VFntoBRGF1A</a></p>
-              <!-- <p style="margin-bottom: 30px;">🔗<a href="https://www.youtube.com/watch?v=VFntoBRGF1A">Full Video Link</a></p> -->
+             
             
             </div>
           
@@ -1127,7 +1103,7 @@
             
             </div>
 
-        </div>
+        </div> -->
 
           
         </div>
@@ -1139,10 +1115,10 @@
     
     <div class="columns is-centered">
       <div class="column">
-        <div class="content has-text-centered">
+        <!-- <div class="content has-text-centered">
           <h2 class="title is-3" style="margin-top: 30px;">Benchmark Statistics</h2>
           
-          <!-- bing tu -->
+
           <div class="container-wrapper">
             <div id="container"></div>
             <div id="image-container">
@@ -1156,13 +1132,13 @@
             (Left) <strong>Video Categorie Hierarchy</strong>: Video-MME consists of 6 key domains and 30 subcategories of video types. <br> (Right) <strong>Video Duration and Task Type Distributions</strong>: Video-MME spans a full spectrum of video lengths and assesses various core abilities of MLLMs.<br/>
         </p>
 
-        </div>
+        </div> -->
       </div>
     </div>
 
     <div class="columns is-centered">
       <div class="column">
-        <div class="content has-text-centered">
+        <!-- <div class="content has-text-centered">
           <h2 class="title is-3">Benchmark Comparison</h2>
           <img src="static/images/dataset_cl.jpg" alt="data-composition" style="max-width: 30%;"/>
           <p style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;" >
@@ -1177,7 +1153,7 @@
                 whether the videos are sourced from a broad range of open domains, and whether provide subtitle together with audio information. 
                 It is important to note that if a dataset includes multiple task formats, our comparison focuses solely on the multiple-choice segment.
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
     
@@ -1197,12 +1173,12 @@
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3">Different Question Types</h2>
-          <div class="box m-5">
+          <!-- <div class="box m-5">
             <div class="content has-text-centered">
               <img src="static/images/exp_results/results_of_question_types_0616.png" alt="grade-lv" width="50%"/>
               <p>Evaluation results of four representative MLLMs.</p>
             </div>
-          </div>
+          </div> -->
       </div>
     </div>
 
@@ -1211,17 +1187,17 @@
         <h2 class="title is-3">Different Video Duration Types</h2>
 
           <div class="box m-5">
-            <div class="content has-text-centered">
+            <!-- <div class="content has-text-centered">
               <img src="static/images/exp_results/results_of_video_types.png" alt="" width="80%"/>
               <p>Evaluation results of Gemini 1.5 Pro.</p>
-            </div>
+            </div> -->
           </div>
 
           <div class="box m-5">
             
             <div id="results-carousel" class="carousel results-carousel">  
             
-              <div class="content has-text-centered">
+              <!-- <div class="content has-text-centered">
                 <img src="static/images/exp_results/results_of_video_sub_types-1.jpg" alt="" width="70%"/>
                 <p style="margin-bottom: 30px;">(1) Evaluation results of Gemini 1.5 Pro across different video subcategories.</p>
               </div>
@@ -1234,7 +1210,7 @@
               <div class="content has-text-centered">
                 <img src="static/images/exp_results/results_of_video_sub_types-3.jpg" alt="" width="70%"/>
                 <p style="margin-bottom: 30px;">(3) Evaluation results of Gemini 1.5 Pro across different video subcategories.</p>
-              </div>
+              </div> -->
 
             </div>
 
@@ -1257,12 +1233,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <pre><code>
-    @article{fu2024video,
-      title={Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis},
-      author={Fu, Chaoyou and Dai, Yuhan and Luo, Yondong and Li, Lei and Ren, Shuhuai and Zhang, Renrui and Wang, Zihan and Zhou, Chenyu and Shen, Yunhang and Zhang, Mengdan and others},
-      journal={arXiv preprint arXiv:2405.21075},
-      year={2024}
-    }
+
 </code></pre>
   </div>
 </section>
@@ -1297,7 +1268,7 @@
       <div class="column is-8">
         <div class="content">
           <p style="text-align: center;">
-            This website is adapted from <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+            This website is adapted from <a href="https://mathvista.github.io/"> MathVista</a>, licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>

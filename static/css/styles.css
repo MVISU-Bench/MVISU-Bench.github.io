@@ -21,13 +21,13 @@ body {
   overscroll-behavior: none;
 }
 
-/* 定义背景平移动画 */
+/* 定义背景平移动画：纵向从上往下 */
 @keyframes moveBackground {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: 100% 0;
+    background-position: 0 100%;
   }
 }
 
@@ -44,25 +44,25 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-image: url('background_cross.png');
+  background-image: url('background_crossv3.png'); /* 你的竖向长图 */
   background-repeat: no-repeat; /* 不重复背景图 */
-  background-size: auto 100%; /* 背景图高度适应容器，高度100% */
+  background-size: 100% auto; /* 宽度自适应，高度拉伸可滚动 */
   background-color: var(--secondary-color);
 
-  /* 应用动画 */
+  /* 应用动画：纵向滚动 */
   animation: moveBackground 5s linear forwards;
 }
 
 /* Background Styling */
 #content {
-  background-image: url('../../background_cross.png');
+  background-image: url('../../background_crossv3.png');
   background-repeat: no-repeat; /* 不重复背景图 */
-  background-size: auto 100%; /* 背景图高度适应容器，高度100% */
+  background-size:100% auto; /* 背景图高度适应容器，高度100% */
   z-index: -1;
   background-color: var(--secondary-color);
 
   /* 应用动画 */
-  animation: moveBackground 5s linear forwards;
+  animation: moveBackground 10s linear forwards;
 }
 
 .header-top-screen {
