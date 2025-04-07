@@ -19,6 +19,7 @@ body {
   scroll-behavior: smooth;
   position: fixed; 
   overscroll-behavior: none;
+  
 }
 
 /* 定义背景平移动画：纵向从上往下 */
