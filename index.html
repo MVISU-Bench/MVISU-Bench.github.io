@@ -1,95 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MVISU-Bench: Welcome</title>
+  <title> MVISU-Bench </title>
+
   <link rel="icon" href="./static/images/colorPhone.png">
-  <!-- External Libraries and Stylesheets -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <!-- External Scripts -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+  <script src="./static/js/echarts.min.js"></script>
+  <script src="./static/js/jquery-3.6.0.min.js"></script>
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="static/css/styles.css">
-  <script src="static/js/scripts.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
   <style>
-    #paper, #download, #team, #explore, #stats {
-      display: none;
+    .no-sort {
+        cursor: default;
+        pointer-events: none;
+        background-image: none !important; /* Remove the sort arrow */
     }
-    html, body {
-      overflow: hidden;
-    }
-    .overlay {
-  position: fixed; /* 覆盖全屏 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1); /* 60%透明的黑（灰）色 */
-  z-index: 2; /* 确保在内容后面 */
-}
-
-/* 提升主要内容层级 */
-#content, header {
-  position: relative;
-  z-index: 1;
-}
-/* 提升主要内容层级 */
-#content, header {
-  position: relative;
-  z-index: 1;
-}
-
-.logo {
-  font-size: 0; /* 关键 */
-}
-.logo span {
-  font-size: 250px; /* 你原本的大小 */
-  font-family: 'CustomFont', sans-serif;
-}
-.please-scroll {
-  text-align: center;
-  width: 100%;
-}
   </style>
+
 </head>
 <body>
-  <div class="overlay">
 
-  <script>
-    document.addEventListener('click', function() {
-        window.location.href = 'home_page.html'; 
+  
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/colorPhone.png" style="width:1.6em;vertical-align: middle" alt="Logo"/>
+            <span class="video-mme" style="vertical-align: middle">
+              <span style="color:#7ac7e2;">M</span><span style="color:#f7df87;">V</span><span style="color:#b88cce;">I</span><span style="color:#54beaa;">S</span><span style="color:#e3716e;">U</span>-Bench
+            </span>
+          </h1>
+          
+          <h2 class="subtitle is-3 publication-subtitle" style="margin-bottom: 20px;">
+            Benchmarking Mobile Agents for Real-World Tasks by <br>
+            <span style="color:#7ac7e2;">Multi-App</span>,
+            <span style="color:#f7df87;">Vague</span>,
+            <span style="color:#b88cce;">Interactive</span>,
+            <span style="color:#54beaa;">Single-App</span> and
+            <span style="color:#e3716e;">Unethical</span> Instructions
+          </h2>
+          
+          
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
+                   class="external-link button is-normal is-rounded is-dark"> -->
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                  </a>
+              </span>
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          Given the significant advances in Large Vision Language Models (LVLMs) in reasoning and visual understanding, mobile agents are rapidly emerging to meet users' automation needs. However, existing evaluation benchmarks are disconnected from the real world and fail to adequately address the diverse and complex requirements of users. From our extensive collection of user questionnaire, we identified five tasks: Multi-App, Vague, Interactive, Single-App, and Unethical Instructions. Around these tasks, we present <img src="./static/images/colorPhone.png" alt="MVISU-Bench Icon" style="height:20px;vertical-align:middle;"> <b><span style="color:#6BB6CF">M</span><span style="color:#E5CE70">V</span><span style="color:#A77ABF">I</span><span style="color:#49A697">S</span><span style="color:#D85B58">U</span>-Bench</b>, a bilingual benchmark that includes 404 tasks across 137 mobile applications. Furthermore, we propose Aider, a plug-and-play module that acts as a dynamic prompt prompter to mitigate risks and clarify user intent for mobile agents. Our Aider is easy to integrate into several frameworks and has successfully improved overall success rates by <b>19.55%</b> compared to the current state-of-the-art (SOTA) on <img src="./static/images/colorPhone.png" alt="MVISU-Bench Icon" style="height:20px;vertical-align:middle;"> <b>MVISU-Bench</b>. Specifically, it achieves success rate improvements of <b>53.52%</b> and <b>29.41%</b> for unethical and interactive instructions, respectively. Through extensive experiments and analysis, we highlight the gap between existing mobile agents and real-world user expectations.
+
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    updateRowNumbers();
+    document.querySelector("#results").addEventListener("click", updateRowNumbers);
+  });
+
+  function updateRowNumbers() {
+    const rows = document.querySelectorAll("#results tbody tr");
+    rows.forEach((row, index) => {
+      row.querySelector("td").innerText = index + 1;
     });
-  </script>
-  <div id="loading-screen"></div>
-  <div id="content">
-    <!-- Navbar Section -->
-    <header class="header">
-      <div class="header-top" style="top: 30%;">
-        <div class="logo" style="font-family: 'CustomFont', sans-serif; font-size: 250px;">
-          <span style="color:#7ac7e2;">M</span><span style="color:#f7df87;">V</span><span style="color:#b88cce;">I</span><span style="color:#54beaa;">S</span><span style="color:#e3716e;">U</span>-Bench
+  }
+</script>
+
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+
+        <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+        <div class="content">
+         
+
+<div style="width: 100%; overflow-x: auto; margin-bottom: 40px;">
+
+  </div>
+  
+
+
+
+
+
         </div>
-        
-        <div class="please-scroll-2" style="top: 130%;">
-          <span style="font-size: 40px;">Benchmarking Mobile Agents for Real-World Tasks by</span><br/>
-          <span style="font-size: 40px;">
-            Multi-App, Vague, Interactive, Single-App and Unethical Instructions
-          </span>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 publication-title is-bold">
+      <img src="static/images/colorPhone.png" style="width:1.6em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista_other" style="vertical-align: middle"><span style="color:#7ac7e2;">M</span><span style="color:#f7df87;">V</span><span style="color:#b88cce;">I</span><span style="color:#54beaa;">S</span><span style="color:#e3716e;">U</span>-Benchmark</span>
+      
+    </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 100%;">
+          
+        <h2 class="title is-3">Construction Pipeline</h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <img src="static/images/exp_results/ACMM绘图-最终版-1 (1)-1.png" alt="data-composition" style="max-width: 80%;"/>
+              <p style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;" >
+                The data collection pipeline of <strong>MVISU-Bench</strong>, including Questionnaire Survey, Instruction Generation, Multi-round Filtering, and Human Verification. This process gradually refined the final <strong>404 bilingual MVISU-Bench</strong> dataset.
+              </p>
+    
+            </div>
+          </div>
         </div>
-        
+
+        <h2 class="title is-3">Benchmark Statistics</h2>
+        <div class="content has-text-justified">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/exp_results/数量统计.png" alt="grade-lv" width="30%"/>
+              <p>Evaluation results of four representative MLLMs.</p>
+            </div>
+            
+          </div>
+            
+      
+        </div>
+        <h2 class="title is-3">Benchmark Comparison
+        </h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <img src="static/images/exp_results/Benchmark Comparison.jpeg" alt="data-composition" style="max-width: 80%;"/>
+              <p style="text-align: center; margin-left: auto; margin-right: auto; width: 50%;" >
+                Comparisons between MVISU-Bench and other mobile agents benchmarks. Our MVISU-Bench is derived from real user questionnaire and aligns more closely with the user's expectations of a mobile agent.
+              </p>
+    
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <!-- <div id="sangshen1" style="width: 1200px; height: 800px;"></div> -->
+            </div>
+          </div>
+          
+        </div>
+
+    
+      </div> 
+
         </div>
       </div>
-      <div class="please-scroll">
-        <span id="reminder">Please click to continue!</span>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column">
+      
       </div>
-    </header>
-    <nav id="navigation-left"></nav>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+      
+      </div>
+    </div>
+    
   </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Experiment Results</h1>
   </div>
+  <div class="box m-5">
+    <div class="content has-text-centered">
+      <img src="static/images/exp_results/image.png" alt="" width="60%"/>
+      <p>Success Rate comparison of closed source and open source models across different mobile agent frameworks on our MVISU-bench. Among them, SA, VA, UN, IN, MA, and ALL denote “Single-APP”, “Vague”, “Unethical”, “Interactive”, “Multi-APP”, “All tasks”, respectively. <strong>Bold</strong> represents optimal performance, while <u>underline</u> represents suboptimal.</p>
+
+    </div>
+    <div class="content has-text-centered">
+      <img src="static/images/exp_results/backbone_comparison_radar（粗线条版）-1.png" alt="" width="60%"/>
+      <p>Performance on different backbones and language instructions. For metrics, SR, AC, DT, Cost, Steps, IT, and OT denote “Success Rate”, “API Calls”, “Duration”, “Cost”, “Steps”, “Input Tokens”, and “Operation Time”, respectively.</p>
+
+
+    </div>
+  </div>
+
+
+
+
+</section>
+
+<!-- <section class="section"> -->
+  <!-- <div class="container"> -->
+
+    <!-- <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Different Question Types</h2>
+         
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Different Video Duration Types</h2>
+
+          <div class="box m-5">
+
+          </div>
+
+          <div class="box m-5">
+            
+            <div id="results-carousel" class="carousel results-carousel">  
+            
+       
+
+            </div>
+
+          </div>
+
+      </div>
+    </div> -->
+
+  <!-- </div> -->
+<!-- </section> -->
+
+
+</section>
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section> -->
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <pre><code>
+
+</code></pre>
+  </div>
+</section> -->
+
+
+<!-- <section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* 调整padding为5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* 允许水平滚动 */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* 代码文本颜色 */
+    }
+  </style>
+
+
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center;">
+            This website is adapted from <a href="https://mathvista.github.io/"> MathVista</a> and <a href="https://video-mme.github.io/"> Video-MME</a> , licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
 
 </body>
 </html>
+
+
+
+
+
+
