@@ -125,7 +125,7 @@
                   <span>Leaderboard</span>
                 </a>
               </span>
-
+              <!-- Leaderboard Link. -->
             </div>
 
           </div>
@@ -178,6 +178,126 @@
          
 
 <div style="width: 100%; overflow-x: auto; margin-bottom: 40px;">
+
+  <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
+    <thead>
+      <tr>
+        <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px; background-color: #ddd"><strong>#</strong></th>
+        <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 240px; background-color: #ddd"><strong>Framework & Model</strong></th>
+        <th colspan="6" style="background-color: #ddd"><strong>English Instructions</strong></th>
+        <th colspan="6" style="background-color: #ddd"><strong>Chinese Instructions</strong></th>
+      </tr>
+      <tr>
+        <!-- English Subcolumns -->
+        <th><strong>SA</strong></th>
+        <th><strong>VA</strong></th>
+        <th><strong>UN</strong></th>
+        <th><strong>IN</strong></th>
+        <th><strong>MA</strong></th>
+        <th><strong>ALL</strong></th>
+        
+        <!-- Chinese Subcolumns -->
+        <th><strong>SA</strong></th>
+        <th><strong>VA</strong></th>
+        <th><strong>UN</strong></th>
+        <th><strong>IN</strong></th>
+        <th><strong>MA</strong></th>
+        <th><strong>ALL</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Human Row -->
+      <tr style="background-color: #f5f5f5">
+        <td style="vertical-align: middle;">-</td>
+        <td style="text-align: left; padding: 2px 10px;">
+          <b>
+            <span style="font-size: 16px; margin-left: 5px; color: #333">Human Expert</span>
+            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Benchmark</p>
+          </b>
+        </td>
+        <td>100</td><td>97.22</td><td>100</td><td>97.22</td><td>96.43</td><td>97.98</td>
+        <td>100</td><td>97.22</td><td>100</td><td>97.22</td><td>96.88</td><td>98.06</td>
+      </tr>
+
+      <!-- Claude-3-5-sonnet -->
+      <tr>
+        <td style="vertical-align: middle;"></td>
+        <td style="text-align: left; padding: 2px 10px;">
+          <b>
+            <span style="font-size: 16px; margin-left: 5px;">Claude-3-5-sonnet</span>
+            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Mobile-Agent-V2 · Anthropic</p>
+          </b>
+        </td>
+        <td>74.29</td><td>88.89</td><td>65.71</td><td>0.00</td><td>50.00</td><td>55.05</td>
+        <td>60.00</td><td>77.78</td><td>22.22</td><td>0.00</td><td>22.58</td><td>35.92</td>
+      </tr>
+
+      <!-- Gemini-2.0-pro -->
+      <tr>
+        <td style="vertical-align: middle;"></td>
+        <td style="text-align: left; padding: 2px 10px;">
+          <b>
+            <span style="font-size: 16px; margin-left: 5px;">Gemini-2.0-pro</span>
+            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Mobile-Agent-E · Google</p>
+          </b>
+        </td>
+        <td>88.57</td><td>75.00</td><td>22.86</td><td>0.00</td><td>44.64</td><td>45.96</td>
+        <td>77.50</td><td>75.00</td><td>16.67</td><td>0.00</td><td>45.16</td><td>44.66</td>
+      </tr>
+
+      <!-- GPT-4o-2024-11-20 -->
+      <tr>
+        <td style="vertical-align: middle;"></td>
+        <td style="text-align: left; padding: 2px 10px;">
+          <b>
+            <span style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-11-20</span>
+            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Mobile-Agent-V2 · OpenAI</p>
+          </b>
+        </td>
+        <td>77.14</td><td>50.00</td><td>14.31</td><td>0.00</td><td>42.86</td><td>37.37</td>
+        <td>52.50</td><td>66.67</td><td>16.67</td><td>0.00</td><td>29.03</td><td>33.50</td>
+      </tr>
+
+      <!-- Qwen2.5-vl-72b -->
+      <tr>
+        <td style="vertical-align: middle;"></td>
+        <td style="text-align: left; padding: 2px 10px;">
+          <b>
+            <span style="font-size: 16px; margin-left: 5px;">Qwen2.5-vl-72b</span>
+            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Mobile-Agent-V2 · Alibaba</p>
+          </b>
+        </td>
+        <td>11.43</td><td>16.67</td><td>20.00</td><td>0.00</td><td>7.14</td><td>10.60</td>
+        <td>27.50</td><td>16.67</td><td>50.00</td><td>0.00</td><td>6.45</td><td>18.93</td>
+      </tr>
+
+      <!-- Qwen2.5-vl-7b -->
+      <tr>
+        <td style="vertical-align: middle;"></td>
+        <td style="text-align: left; padding: 2px 10px;">
+          <b>
+            <span style="font-size: 16px; margin-left: 5px;">Qwen2.5-vl-7b</span>
+            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Mobile-Agent · Alibaba</p>
+          </b>
+        </td>
+        <td>5.71</td><td>2.78</td><td>25.71</td><td>0.00</td><td>0.00</td><td>6.06</td>
+        <td>0.00</td><td>8.33</td><td>50.00</td><td>0.00</td><td>0.00</td><td>10.19</td>
+      </tr>
+
+      <!-- Qwen2.5-vl-3b -->
+      <tr>
+        <td style="vertical-align: middle;"></td>
+        <td style="text-align: left; padding: 2px 10px;">
+          <b>
+            <span style="font-size: 16px; margin-left: 5px;">Qwen2.5-vl-3b</span>
+            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Mobile-Agent · Alibaba</p>
+          </b>
+        </td>
+        <td>0.00</td><td>0.00</td><td>25.71</td><td>0.00</td><td>0.00</td><td>4.56</td>
+        <td>0.00</td><td>0.00</td><td>33.33</td><td>0.00</td><td>0.00</td><td>5.83</td>
+      </tr>
+    </tbody>
+</table>
 
   </div>
   
